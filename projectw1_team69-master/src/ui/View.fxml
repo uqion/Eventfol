@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4b505d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller">
+   <children>
+      <Pane layoutX="486.0" prefHeight="400.0" prefWidth="114.0" style="-fx-background-color: FFA500;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="notifyButton" fitHeight="76.0" fitWidth="76.0" layoutX="19.0" layoutY="24.0" onMousePressed="#notify" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/USER/Desktop/notify.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="editButton" fitHeight="76.0" fitWidth="77.0" layoutX="16.0" layoutY="152.0" onMousePressed="#edit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../edit.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="deleteButton" fitHeight="76.0" fitWidth="77.0" layoutX="19.0" layoutY="290.0" onMouseClicked="#deleteSelected" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></Pane>
+      <Pane layoutX="-3.0" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #4b505d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <DatePicker fx:id="datePicker" layoutX="54.0" layoutY="279.0" onAction="#getDate" style="-fx-text-inner-color: FFA500;" />
+            <Button fx:id="createEvent" layoutX="69.0" layoutY="352.0" mnemonicParsing="false" onAction="#createEvent" onMouseExited="#clearResults" prefHeight="34.0" prefWidth="128.0" style="-fx-background-radius: 10mm; -fx-background-color: #618c6f; -fx-border-radius: 10mm;" text="Pencil In!" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" layoutX="-3.0" layoutY="-16.0" prefHeight="72.0" prefWidth="281.0" text=" Upcoming event" textFill="ORANGE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="selectedDetails" layoutX="29.0" layoutY="55.0" prefHeight="91.0" prefWidth="214.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutY="156.0" prefHeight="35.0" prefWidth="266.0" style="-fx-background-color: #4c9a49;" text=" New Event" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="212.0" text="What:" textFill="ORANGE" />
+            <Label layoutX="10.0" layoutY="246.0" text="Where:" textFill="ORANGE" />
+            <Label layoutX="13.0" layoutY="283.0" text="When:" textFill="ORANGE" />
+            <Circle fill="WHITE" layoutX="152.0" layoutY="37.0" radius="5.0" stroke="#f5f5f5" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="ORANGE" layoutX="162.0" layoutY="42.0" radius="5.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="0.0" />
+            <TextField fx:id="locField" layoutX="59.0" layoutY="242.0" onAction="#getLoc" style="-fx-text-inner-color: FFA500;" />
+            <TextField fx:id="eventDesc" layoutX="59.0" layoutY="208.0" onAction="#getEventDesc" style="-fx-text-inner-color: FFA500;" />
+            <TextField fx:id="eventHr" layoutX="59.0" layoutY="319.0" onAction="#getEventHr" prefHeight="25.0" prefWidth="37.0" promptText="HH" style="-fx-text-inner-color: ffa500;" />
+            <Label layoutX="104.0" layoutY="323.0" text=":" textFill="#f88408" />
+            <TextField fx:id="eventMin" layoutX="115.0" layoutY="319.0" onAction="#getEventMin" prefHeight="25.0" prefWidth="37.0" promptText="MM" style="-fx-text-inner-color: FFA500;" />
+            <RadioButton fx:id="amBool" layoutX="161.0" layoutY="311.0" mnemonicParsing="false" onAction="#getAM" text="AM" textFill="ORANGE" />
+            <RadioButton fx:id="pmBool" layoutX="161.0" layoutY="331.0" mnemonicParsing="false" onAction="#getPM" text="PM" textFill="ORANGE" />
+            <Accordion layoutX="29.0" layoutY="81.0" />
+         </children>
+      </Pane>
+      <ListView fx:id="schedule" layoutX="272.0" layoutY="40.0" onMouseClicked="#displaySelected" onMouseExited="#clearDisplay" prefHeight="267.0" prefWidth="214.0" style="-fx-border-color: FFA500; -fx-text-inner-color: FFA500;" />
+      <Label fx:id="resultsField" layoutX="261.0" layoutY="314.0" prefHeight="72.0" prefWidth="232.0" textFill="WHITE" />
+      <Accordion />
+   </children>
+</AnchorPane>

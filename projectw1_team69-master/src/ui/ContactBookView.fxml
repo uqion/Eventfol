@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="499.0" style="-fx-background-color: #4b505d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ContactBookController">
+   <children>
+      <Pane layoutX="378.0" prefHeight="246.0" prefWidth="121.0" style="-fx-background-color: FFA500;">
+         <children>
+            <ImageView fx:id="closeButton" fitHeight="69.0" fitWidth="70.0" layoutX="26.0" layoutY="163.0" onMouseClicked="#closeWindow" onMousePressed="#closeWindow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../check.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="eventDesc" layoutX="117.0" layoutY="86.0" style="-fx-text-inner-color: FFA500;" />
+      <TextField fx:id="eventLoc" layoutX="119.0" layoutY="123.0" style="-fx-text-inner-color: FFA500;" />
+      <DatePicker fx:id="eventDate" layoutX="117.0" layoutY="161.0" style="-fx-text-inner-color: FFA500;" />
+      <TextField fx:id="eventHr" layoutX="117.0" layoutY="198.0" prefHeight="25.0" prefWidth="38.0" promptText="HH" style="-fx-text-inner-color: FFA500;" />
+      <TextField fx:id="eventMin" layoutX="176.0" layoutY="198.0" prefHeight="25.0" prefWidth="38.0" promptText="MM" style="-fx-text-inner-color: FFA500;" />
+      <Pane layoutX="-9.0" layoutY="22.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: #4c9a49;">
+         <children>
+            <Label fx:id="resultsField" alignment="TOP_LEFT" layoutX="14.0" layoutY="4.0" prefHeight="36.0" prefWidth="91.0" text="Edit event" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="65.0" layoutY="90.0" text="What:" textFill="ORANGE" />
+      <Label layoutX="62.0" layoutY="127.0" text="Where:" textFill="ORANGE" />
+      <Label layoutX="64.0" layoutY="165.0" text="When:" textFill="ORANGE" />
+      <Label layoutX="164.0" layoutY="202.0" prefHeight="17.0" prefWidth="0.0" text=":" textFill="ORANGE" />
+      <RadioButton layoutX="232.0" layoutY="194.0" mnemonicParsing="false" text="AM" textFill="ORANGE" />
+      <RadioButton layoutX="232.0" layoutY="215.0" mnemonicParsing="false" text="PM" textFill="ORANGE" />
+      <Accordion />
+   </children>
+</AnchorPane>
